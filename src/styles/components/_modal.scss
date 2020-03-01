@@ -1,0 +1,44 @@
+// Only target the div
+.ReactModalPortal > div {
+  // the modal first opens before it really is considered
+  // open, we're going to start it off with
+  // it's never going to show screen
+  // it's going to be part of the dom but not visible
+  opacity: 0;
+}
+
+// looking for inside of their an item whith
+// a class of .ReactModal__Overlay
+.ReactModalPortal .ReactModal__Overlay {
+  transition: 200ms ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.modal {
+  background: $light-blue;
+  color: white;
+  max-width: 30rem;
+  padding: $xl-size;
+  text-align: center;
+}
+
+.modal__title {
+  margin: 0 0 $m-size 0;
+}
+
+.modal__body {
+  margin: 0 0 $l-size 0;
+  font-size: 2rem;
+  font-weight: 300;
+  word-break: break-all;
+}
